@@ -400,8 +400,6 @@ class Nav_Menu_Roles {
 			}
 			if ( ! empty ( $custom_roles ) ) $saved_data = $custom_roles;
 		}
-		// Last chance to update before updating menu item's meta.
-		$saved_data = apply_filters( 'before_nav_save_roles', $saved_data, $menu_id, $menu_item_db_id );
 		if ( $saved_data ) {
 			update_post_meta( $menu_item_db_id, '_nav_menu_role', $saved_data );
 		} else {
